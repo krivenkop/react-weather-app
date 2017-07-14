@@ -7,7 +7,7 @@ import WarnTownName from "../components/WarnTownName";
 import CurrentTown from "../components/CurrentTown";
 import AddTownInput from "../components/AddTownInput";
 import {
-  setCurrentTown,
+  selectCurrentTown,
   delTown,
   setWarnTownName,
   setWarnNever
@@ -39,7 +39,12 @@ class Main extends Component {
   render() {
     if (this.props.mainStore.defaultTown === undefined) {
       return (
-        <div id="preloader"></div>
+        <div class="preloader">
+        <div class="circ1"></div>
+        <div class="circ2"></div>
+        <div class="circ3"></div>
+        <div class="circ4"></div>
+      </div>
       );
     } else if (this.props.mainStore.defaultTown !== undefined) {
       return (
@@ -91,7 +96,7 @@ const mapDispatchToProps = dispatch => {
       dispatch(setWarnTownName());
     },
     onTownItemClick: payload => {
-      dispatch(setCurrentTown(payload));
+      dispatch(selectCurrentTown(payload));
     },
     onTownItemCloseClick: payload => {
       dispatch(delTown(payload))

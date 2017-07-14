@@ -26,7 +26,7 @@ export function delTown(payload) {
   }
 }
 
-export function setCurrentTown(payload) {
+export function selectCurrentTown(payload) {
   return {
     type: SET_CURRENT_TOWN,
     payload

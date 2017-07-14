@@ -16,6 +16,8 @@ let initialState = {
 
 if (localStorage.getItem("mainStore")) {
   initialState = JSON.parse(localStorage.getItem("mainStore")).mainStore;
+  initialState.defaultTown = undefined;
+  initialState.current = {};
 }
 
 export default (state = initialState, action = {}) => {
