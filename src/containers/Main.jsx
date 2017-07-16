@@ -39,11 +39,11 @@ class Main extends Component {
   render() {
     if (this.props.mainStore.defaultTown === undefined) {
       return (
-        <div class="preloader">
-        <div class="circ1"></div>
-        <div class="circ2"></div>
-        <div class="circ3"></div>
-        <div class="circ4"></div>
+        <div className="preloader">
+        <div className="circ1"></div>
+        <div className="circ2"></div>
+        <div className="circ3"></div>
+        <div className="circ4"></div>
       </div>
       );
     } else if (this.props.mainStore.defaultTown !== undefined) {

@@ -4,8 +4,11 @@ import store from "../index";
 
 import { addTown, setWarnTownName } from "../actionTypes";
 
+var cyrillicToTranslit = require('cyrillic-to-translit-js');
+
 const fetchByName = name => {
-  let request = `${URL}?q=${name}&units=metric&APPID=${PRIVATE_KEY}`;
+
+  let request = `${URL}?q=${cyrillicToTranslit().transform(name)}&units=metric&APPID=${PRIVATE_KEY}`;
 
   axios
     .get(request)
